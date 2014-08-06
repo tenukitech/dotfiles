@@ -15,3 +15,24 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+PERL_MB_OPT="--install_base \"/Users/jnarki001c/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/jnarki001c/perl5"; export PERL_MM_OPT;
+
+os_select () {
+    PS3='Please enter your choice: '
+
+    options=()
+    for i in ~/.openrc/*
+    do
+        options+=(`basename $i`)
+    done
+
+    select file in "${options[@]}"
+    do
+        source ~/.openrc/$file
+        break
+    done
+
+}
