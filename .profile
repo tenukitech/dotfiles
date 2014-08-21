@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -r ~/.bash_rc ] && . ~/.bashrc
+[ -r ~/.bashrc ] && . ~/.bashrc
 
 export PS1="\[$(tput setaf 4)\][\\u@\h \\W]\\$ \[$(tput sgr0)\]"
 export PS2="> "
