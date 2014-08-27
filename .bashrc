@@ -5,21 +5,22 @@
 ### Functions
 rerun () { . ~/.bashrc; echo "Success!"; }
 
+mkpasswd () {
+    stty -echo; read pw; stty echo
+    echo $pw | perl -e '$passwd=<STDIN>; print crypt($passwd,"\$6\$saltsalt\$") . "\n"'
+}
 
 os_select () {
     PS3='Please enter your choice: '
+    
+    cd ~/.openrc
 
-    options=()
-    for i in ~/.openrc/*
+    select file in *
     do
-        options+=(`basename $i`)
-    done
-
-    select file in "${options[@]}"
-    do
-        source ~/.openrc/$file
+        source "$file"
         break
     done
+    cd $OLDPWD
 }
 
 ### Paths
