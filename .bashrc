@@ -26,6 +26,14 @@ os_select () {
 ### Paths
 export PATH=$HOME/bin:/usr/local/bin/:/usr/local/heroku/bin:$PATH:$HOME/.rvm/bin
 
+for i in /opt/*/bin
+do
+	PATH=$PATH:$i
+done
+
+# Aliases
+test -f '/opt/sublime_text/sublime_text' && alias subl=/opt/sublime_text/sublime_text
+
 ### Comcast specific
 if [ $USER == 'jnarki001c' ]; then
   cssh() {
