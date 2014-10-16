@@ -20,6 +20,7 @@ done
 
 # Aliases
 test -f '/opt/sublime_text/sublime_text' && alias subl=/opt/sublime_text/sublime_text
+test -f '/Applications/Sublime Text.app/Contents/MacOS/Sublime Text' && alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 
 ### Comcast specific
 if [ $USER == 'jnarki001c' ]; then
