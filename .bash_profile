@@ -1,3 +1,1 @@
-#!/bin/bash
-
-test -f $HOME/.profile && . $HOME/.profile
+/Users/jnarki001c/dotfiles/.bash_profile
